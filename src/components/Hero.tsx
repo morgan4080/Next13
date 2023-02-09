@@ -9,7 +9,6 @@ import {gsap} from "gsap"
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 const Hero = () => {
-    const containerRef = useRef(null)
     const animateContainerRef = useRef(null)
     const animateContainerRef1 = useRef(null)
     const animateContainerRef2 = useRef(null)
@@ -23,6 +22,7 @@ const Hero = () => {
                 tl.from(animateParent.children, {
                     yPercent: 130,
                     stagger: 0.05,
+                    opacity: 0,
                     duration: 1
                 })
             }
@@ -31,6 +31,7 @@ const Hero = () => {
                 tl.from(animateParent1.children, {
                     yPercent: 130,
                     stagger: 0.05,
+                    opacity: 0,
                     duration: 1
                 })
             }
@@ -39,6 +40,7 @@ const Hero = () => {
                 tl.from(animateParent2.children, {
                     yPercent: 130,
                     stagger: 0.05,
+                    opacity: 0,
                     duration: 1
                 })
             }
@@ -47,6 +49,7 @@ const Hero = () => {
                 tl.from(animateParent3.children, {
                     yPercent: 130,
                     stagger: 0.05,
+                    opacity: 0,
                     duration: 1
                 })
             }
@@ -55,6 +58,7 @@ const Hero = () => {
                 tl.from(animateParent4, {
                     yPercent: 130,
                     stagger: 0.05,
+                    opacity: 0,
                     duration: 1
                 })
             }
@@ -65,7 +69,7 @@ const Hero = () => {
     }, [])
     return (
         <div className="relative min-h-screen pt-10 lg:pt-0 xl:pt-32 pb-20">
-            <Container ref={containerRef} className="relative">
+            <Container className="relative">
                 <div className="sm:rounded-2xl sm:flex sm:flex-row-reverse">
                     <div className="z-10 sm:flex-1 pt-0 lg:pt-20 lg:pl-10">
                         <Astronaut/>
@@ -73,28 +77,28 @@ const Hero = () => {
                     <div className="sm:flex-1">
                         <div className="relative px-4 py-6 sm:pt-20 sm:px-6 lg:px-0 lg:mb-32">
                             <div className={classNames(seymour_one_400.className,"text-left lg:min-w-max text-4xl font-bold tracking-tight sm:text-5xl lg:text-8xl overflow-hidden")}>
-                                <div ref={animateContainerRef} className="flex ">
+                                <div ref={animateContainerRef} className="flex text-slate-900 dark:text-slate-200">
                                     <div>FRONT</div>
                                     <div>-</div>
                                     <div>END</div>
                                 </div>
                             </div>
                             <div className={classNames(seymour_one_400.className,"text-left lg:min-w-max text-4xl font-bold tracking-tight sm:text-5xl lg:text-8xl overflow-hidden")}>
-                                <div ref={animateContainerRef1} className="flex text-sky-500 ">
+                                <div ref={animateContainerRef1} className="flex text-sky-500 dark:text-cyan-300">
                                     <div>DEVELOPER</div>
                                 </div>
                             </div>
-                            <div ref={animateContainerRef2} className={classNames(sulphur_point_400.className,"mt-6 max-w-lg text-left text-xl text-gray-700 dark:text-gray-300 sm:max-w-3xl overflow-hidden")}>
+                            <div ref={animateContainerRef2} className={classNames(sulphur_point_400.className,"mt-6 max-w-lg text-left text-xl sm:max-w-3xl overflow-hidden text-slate-700 dark:text-slate-300")}>
                                 <div>Based In Nairobi, Kenya</div>
                             </div>
-                            <div ref={animateContainerRef3} className={classNames(sulphur_point_400.className,"mt-6 max-w-md text-left font-display text-xl tracking-tight text-gray-700 dark:text-gray-400 sm:pr-8 sm:max-w-2xl overflow-hidden")}>
+                            <div ref={animateContainerRef3} className={classNames(sulphur_point_400.className,"mt-6 max-w-md text-left font-display text-xl tracking-tight sm:pr-8 sm:max-w-2xl overflow-hidden")}>
                                 <div>
                                     I love creating beautiful and intuitive user experiences.
                                     Most importantly, Im a people person. That means, Im able to inspire and get inspired.
                                 </div>
                             </div>
                             <div className="overflow-hidden">
-                                <button ref={animateContainerRef4} type="button" className={classNames(sulphur_point_400.className,"mt-12 group inline-flex items-center justify-center py-4 px-6 text-lg focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-sky-400 text-white hover:text-slate-100 hover:bg-pink-400 active:bg-sky-800 active:text-sky-100 focus-visible:outline-sky-600")}>
+                                <button ref={animateContainerRef4} type="button" className={classNames(sulphur_point_400.className,"mt-12 group inline-flex items-center justify-center py-4 px-6 text-lg focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-sky-500 dark:bg-cyan-300 text-white dark:text-slate-900 hover:text-slate-100 hover:bg-pink-400 active:bg-sky-800 active:text-sky-100 focus-visible:outline-sky-600")}>
                                     <span>GET IN TOUCH<span className="hidden lg:inline pl-4">→</span></span>
                                 </button>
                             </div>

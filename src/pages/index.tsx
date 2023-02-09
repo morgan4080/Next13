@@ -13,6 +13,15 @@ export default function Home() {
     const loadingRef = useRef(null)
 
     useLayoutEffect(() => {
+        if (document.documentElement) {
+            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+            const mainNode: HTMLElement = document.documentElement
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                mainNode.classList.add('dark')
+            } else {
+                mainNode.classList.remove('dark')
+            }
+        }
         const ctx = gsap.context(() => {
             if (loadingRef.current) {
                 const loadingElem: HTMLElement = loadingRef.current
@@ -31,30 +40,57 @@ export default function Home() {
         }
     }, [])
 
+    const toggleMode = (mode: string) => {
+        if (mode === 'dark') {
+            // Whenever the user explicitly chooses dark mode
+            localStorage.theme = 'dark'
+        }
+
+        if (mode === "light") {
+            // Whenever the user explicitly chooses light mode
+            localStorage.theme = 'light'
+        }
+
+        if (mode === "OS") {
+            // Whenever the user explicitly chooses to respect the OS preference
+            localStorage.removeItem('theme')
+        }
+
+        if (document.documentElement) {
+            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+            const mainNode: HTMLElement = document.documentElement
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                mainNode.classList.add('dark')
+            } else {
+                mainNode.classList.remove('dark')
+            }
+        }
+    }
+
     return (
         <>
             <Head>
-                <title>Portfolio | HOME</title>
+                <title>Mutugi Morgan</title>
                 <meta name="description" content="Morgan Mutugi Portfolio" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
                 {loading ?
-                    <div className="min-h-screen bg-white flex justify-center items-center">
+                    <div className="min-h-screen flex justify-center items-center">
                         <div className="overflow-hidden">
-                            <h1 ref={loadingRef} className={classNames(seymour_one_400.className, "flex text-sky-500 text-4xl")}>
+                            <h1 ref={loadingRef} className={classNames(seymour_one_400.className, "flex text-sky-500 dark:text-cyan-300 text-4xl")}>
                                 <div>LOADING</div>
                             </h1>
                         </div>
                     </div>
                     :
-                    <>
+                    <div>
                         <BackgroundTexture/>
-                        <NavComponent/>
+                        <NavComponent toggleMode={toggleMode}/>
                         <Hero />
                         <Skills />
-                    </>
+                    </div>
                 }
             </main>
         </>
