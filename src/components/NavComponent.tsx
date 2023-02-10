@@ -20,9 +20,9 @@ const NavComponent = ({toggleMode}: {toggleMode: (mode: string) => void}) => {
                         <Link href="/" className="mr-auto flex items-end" >
                             <span className="sr-only">Morgan Mutugi</span>
                             <div className="flex items-center justify-center text-3xl font-black font-serif text-gray-700 dark:text-white">
-                                /<span className="text-sky-500 dark:text-cyan-300">/</span>
+                                /<span className="text-sky-500 dark:text-cyan-300">/</span>/
                             </div>
-                            <Morgan className="h-6 w-auto pt-1 pl-4" />
+                            <Morgan className="h-6 w-auto pl-4" />
                         </Link>
                     </div>
 

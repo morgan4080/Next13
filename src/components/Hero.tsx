@@ -91,7 +91,7 @@ const Hero = () => {
                             <div ref={animateContainerRef2} className={classNames(sulphur_point_400.className,"mt-6 max-w-lg text-left text-xl sm:max-w-3xl overflow-hidden text-slate-700 dark:text-slate-300")}>
                                 <div>Based In Nairobi, Kenya</div>
                             </div>
-                            <div ref={animateContainerRef3} className={classNames(sulphur_point_400.className,"mt-6 max-w-md text-left font-display text-xl tracking-tight sm:pr-8 sm:max-w-2xl overflow-hidden")}>
+                            <div ref={animateContainerRef3} className={classNames(sulphur_point_400.className,"mt-6 max-w-md text-left font-display text-xl tracking-tight sm:pr-8 sm:max-w-2xl overflow-hidden text-slate-700 dark:text-slate-300")}>
                                 <div>
                                     I love creating beautiful and intuitive user experiences.
                                     Most importantly, Im a people person. That means, Im able to inspire and get inspired.

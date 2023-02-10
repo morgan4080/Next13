@@ -8,6 +8,7 @@ import classNames from "@/Utils/ClassNames";
 import {useLayoutEffect, useRef, useState} from "react";
 const seymour_one_400 = Seymour_One({subsets: ['latin'], weight: "400"})
 import {gsap} from "gsap"
+import BackgroundTexture2 from "@/components/BackgroundTexture2";
 export default function Home() {
     const [loading, setLoading] = useState(true)
     const loadingRef = useRef(null)

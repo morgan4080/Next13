@@ -85,11 +85,11 @@ export function Astronaut() {
                 })
             }
             if (spaceManRef.current && meteorRef.current) {
-                const tl2 = gsap.timeline({defaults:{duration: 2.5, delay: 5}})
-                const tl3 = gsap.timeline({defaults:{duration: 2.5, delay: 5}})
+                const tl2 = gsap.timeline({defaults:{duration: .1, delay: 5}})
+                const tl3 = gsap.timeline({defaults:{duration: 3.5, delay: 5, stagger: 0.05}})
 
-                tl2.from(meteorRef.current, {y: -5, x: -5, repeat: -1, yoyo:true})
-                tl3.to(spaceManRef.current, {y: 10, x: 10, repeat: -1, yoyo:true})
+                tl2.from(meteorRef.current, {y: "+=2", x: "+=2", repeat: -1, yoyo:true})
+                tl3.to(spaceManRef.current, {y: 20, x: 20, repeat: -1, yoyo:true})
             }
         })
         return () => {
