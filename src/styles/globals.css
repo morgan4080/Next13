@@ -69,17 +69,17 @@ body {
   scroll-behavior: smooth;
 }
 
-/* width */
+/*!* width *!
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
+!* Track *!
 ::-webkit-scrollbar-track {
   background: #cccccc;
 }
 
-/* Handle */
+!* Handle *!
 ::-webkit-scrollbar-thumb {
   background: #52596d;
   border: 2px #fcf9ed solid;
@@ -88,7 +88,7 @@ body {
 
 .scrollCustom::-webkit-scrollbar {
   width: 1px;
-}
+}*/
 
 body {
   color: rgb(var(--foreground-rgb));

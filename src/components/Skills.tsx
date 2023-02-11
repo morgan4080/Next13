@@ -85,7 +85,7 @@ const Skills = () => {
                             { stack.map((item) => (
                                 <Tab.Panel
                                     key={item.name}
-                                    className="relative mt-16 sm:mt-24 lg:-mt-44 flex justify-end items-start [&:not(:focus-visible)]:focus:outline-none"
+                                    className="relative mt-16 sm:mt-24 lg:-mt-52 flex justify-end items-start [&:not(:focus-visible)]:focus:outline-none"
                                     unmount={false}
                                 >
                                     <item.svg />
@@ -96,6 +96,7 @@ const Skills = () => {
                 </div>
             </Container>
         </div>
+
     )
 }
 

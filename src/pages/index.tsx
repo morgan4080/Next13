@@ -5,7 +5,7 @@ import Skills from "@/components/Skills"
 import BackgroundTexture from "@/components/BackgroundTexture";
 import {Seymour_One} from "@next/font/google";
 import classNames from "@/Utils/ClassNames";
-import {useLayoutEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 const seymour_one_400 = Seymour_One({subsets: ['latin'], weight: "400"})
 import {gsap} from "gsap"
 import BackgroundTexture2 from "@/components/BackgroundTexture2";
@@ -13,7 +13,7 @@ export default function Home() {
     const [loading, setLoading] = useState(true)
     const loadingRef = useRef(null)
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (document.documentElement) {
             // On page load or when changing themes, best to add inline in `head` to avoid FOUC
             const mainNode: HTMLElement = document.documentElement

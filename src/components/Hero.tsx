@@ -1,12 +1,13 @@
+import {gsap} from "gsap"
+import {ScrollTrigger} from "gsap/dist/ScrollTrigger"
 import { Container } from '@/components/Container'
 import { Astronaut } from "@/components/Astronaut"
 import { Sulphur_Point, Seymour_One } from '@next/font/google'
 import classNames from "@/Utils/ClassNames"
-import {useLayoutEffect, useRef} from "react"
+import {useEffect, useRef} from "react"
 const sulphur_point_400 = Sulphur_Point({subsets: ['latin'], weight: "400"})
 const seymour_one_400 = Seymour_One({subsets: ['latin'], weight: "400"})
-import {gsap} from "gsap"
-import {ScrollTrigger} from "gsap/dist/ScrollTrigger"
+
 gsap.registerPlugin(ScrollTrigger)
 const Hero = () => {
     const animateContainerRef = useRef(null)
@@ -14,7 +15,7 @@ const Hero = () => {
     const animateContainerRef2 = useRef(null)
     const animateContainerRef3 = useRef(null)
     const animateContainerRef4 = useRef(null)
-    useLayoutEffect(() => {
+    useEffect(() => {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline()
             if (animateContainerRef.current) {

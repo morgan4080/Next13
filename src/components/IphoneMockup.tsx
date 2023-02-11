@@ -1,4 +1,4 @@
-import {useLayoutEffect, useRef} from "react"
+import {useEffect, useRef} from "react"
 import Image from "next/image";
 import WelcomeScreen from "@/images/1.1.1. - Welcome Screen.jpg"
 import Onboarding1 from "@/images/1.1.2a - Onboarding 1-3.png"
@@ -13,7 +13,7 @@ const IphoneMockup = () => {
     const onboarding2Ref = useRef(null)
     const onboarding3Ref = useRef(null)
     CustomEase.create('customEase', '0.25,0.1,0.25,1')
-    useLayoutEffect(() => {
+    useEffect(() => {
         const ctx = gsap.context(() => {
             if (welcomeScreenRef.current && onboarding1Ref.current && onboarding2Ref.current && onboarding3Ref.current) {
                 const welcomeScreen: HTMLElement = welcomeScreenRef.current
@@ -50,7 +50,7 @@ const IphoneMockup = () => {
         }
     }, [])
     return (
-        <svg viewBox="0 0 366 729" role="img" className="lg:absolute w-[22.875rem] max-w-full drop-shadow-2xl">
+        <svg viewBox="0 0 366 729" role="img" className="lg:w-[16.875rem] xl:w-[22.875rem] max-w-full drop-shadow-2xl">
             <title>App screenshot</title>
             <defs>
                 <clipPath id="2ade4387-9c63-4fc4-b754-10e687a0d332">

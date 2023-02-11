@@ -1,4 +1,4 @@
-import {useLayoutEffect, useMemo, useRef} from 'react'
+import {useEffect, useMemo, useRef} from 'react'
 import rand from "@/Utils/rand"
 import {gsap, Linear} from "gsap"
 import { RoughEase } from "gsap/dist/EasePack"
@@ -41,7 +41,7 @@ export function Astronaut() {
     }, [numAnimations]);
 
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const ctx = gsap.context(() => {
             if (starRef.current && svgRef.current) {
                 const starHolder: HTMLElement & SVGElement = starRef.current
@@ -88,7 +88,7 @@ export function Astronaut() {
                 const tl2 = gsap.timeline({defaults:{duration: .1, delay: 5}})
                 const tl3 = gsap.timeline({defaults:{duration: 3.5, delay: 5, stagger: 0.05}})
 
-                tl2.from(meteorRef.current, {y: "+=2", x: "+=2", repeat: -1, yoyo:true})
+                tl2.from(meteorRef.current, {y: "+=1", x: "+=1", repeat: -1, yoyo:true})
                 tl3.to(spaceManRef.current, {y: 20, x: 20, repeat: -1, yoyo:true})
             }
         })

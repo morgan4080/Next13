@@ -1,6 +1,6 @@
 const BackgroundTexture2 = () => {
     return (
-        <svg className="w-full h-full hidden dark:block absolute bottom-0" width="1440" height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-full hidden dark:block opacity-50 absolute bottom-0" width="1440" height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_1_2)">
                 <mask id="mask0_1_2" style={{ maskType:"alpha" }} maskUnits="userSpaceOnUse" x="-71" y="-73" width="858" height="858">
                     <rect x="-71" y="-73" width="858" height="858" fill="url(#paint0_radial_1_2)"/>

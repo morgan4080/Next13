@@ -1,6 +1,6 @@
 const LaptopMockup = () => {
     return (
-        <svg className="lg:absolute w-[32.875rem] max-w-full drop-shadow-xl" width="1083" height="632" viewBox="0 0 1083 632" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className="w-[32.875rem] max-w-full drop-shadow-xl" width="1083" height="632" viewBox="0 0 1083 632" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <mask id="mask0_3_158" style={{maskType: "luminance"}} maskUnits="userSpaceOnUse" x="817" y="600" width="183" height="15">
                 <path d="M999.181 614.069V614.024C999.02 608.092 936.012 603.011 817.092 600.003C936.164 603.015 999.181 608.105 999.181 614.047C999.181 614.055 999.181 614.061 999.181 614.069Z" fill="white"/>
             </mask>
