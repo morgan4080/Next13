@@ -77,14 +77,14 @@ const Hero = () => {
                     </div>
                     <div className="sm:flex-1">
                         <div className="relative px-4 py-6 sm:pt-20 sm:px-6 lg:px-0 lg:mb-32">
-                            <div className={classNames(seymour_one_400.className,"text-left lg:min-w-max text-4xl font-bold tracking-tight sm:text-5xl lg:text-8xl overflow-hidden")}>
+                            <div className={classNames(seymour_one_400.className,"text-left lg:min-w-max text-3xl font-bold tracking-tight sm:text-5xl lg:text-8xl overflow-hidden")}>
                                 <div ref={animateContainerRef} className="flex text-slate-900 dark:text-slate-200">
                                     <div>FRONT</div>
                                     <div>-</div>
                                     <div>END</div>
                                 </div>
                             </div>
-                            <div className={classNames(seymour_one_400.className,"text-left lg:min-w-max text-4xl font-bold tracking-tight sm:text-5xl lg:text-8xl overflow-hidden")}>
+                            <div className={classNames(seymour_one_400.className,"text-left lg:min-w-max text-3xl font-bold tracking-tight sm:text-5xl lg:text-8xl overflow-hidden")}>
                                 <div ref={animateContainerRef1} className="flex text-sky-500 dark:text-cyan-300">
                                     <div>DEVELOPER</div>
                                 </div>
