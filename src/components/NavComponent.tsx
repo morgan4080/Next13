@@ -148,16 +148,16 @@ const NavComponent = ({toggleMode}: {toggleMode: (mode: string) => void}) => {
                         </a>
                     </div>
 
-                    <div className="-mr-2 -my-2 md:hidden">
+                    {/*<div className="-mr-2 -my-2 md:hidden">
                         <Popover.Button className="rounded-md p-2 inline-flex items-center justify-center text-gray-400 dark:text-gray-300 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500">
                             <span className="sr-only">Open menu</span>
                             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                         </Popover.Button>
-                    </div>
+                    </div>*/}
 
                 </div>
 
-                <Transition
+                {/*<Transition
                     as={Fragment}
                     enter="duration-200 ease-out"
                     enterFrom="opacity-0 scale-95"
@@ -206,7 +206,7 @@ const NavComponent = ({toggleMode}: {toggleMode: (mode: string) => void}) => {
                             </div>
                         </div>
                     </Popover.Panel>
-                </Transition>
+                </Transition>*/}
             </Popover>
         </header>
     )

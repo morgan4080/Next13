@@ -9,6 +9,7 @@ import {useEffect, useRef, useState} from "react";
 const seymour_one_400 = Seymour_One({subsets: ['latin'], weight: "400"})
 import {gsap} from "gsap"
 import BackgroundTexture2 from "@/components/BackgroundTexture2";
+import Footer from "@/components/Footer";
 export default function Home() {
     const [loading, setLoading] = useState(true)
     const loadingRef = useRef(null)
@@ -67,6 +68,7 @@ export default function Home() {
             }
         }
     }
+    //
 
     return (
         <>
@@ -91,6 +93,7 @@ export default function Home() {
                         <NavComponent toggleMode={toggleMode}/>
                         <Hero />
                         <Skills />
+                        <Footer />
                     </div>
                 }
             </main>

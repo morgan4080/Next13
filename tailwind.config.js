@@ -13,6 +13,9 @@ module.exports = {
     extend: {
       screens: {
         'xl': '1600px',
+      },
+      rotate: {
+        '270': '270deg'
       }
     },
   },
