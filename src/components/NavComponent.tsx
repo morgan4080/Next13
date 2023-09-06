@@ -11,7 +11,7 @@ const sulphur_point_400 = Sulphur_Point({subsets: ['latin'], weight: "400"})
 const navLinks = [
     { id: 1, name: "Home", url: "/" },
     { id: 2, name: "About", url: "/#about" },
-    { id: 2, name: "Github", url: "https://github.com/morgan4080" },
+    { id: 3, name: "Github", url: "https://github.com/morgan4080" },
 ];
 const NavComponent = ({toggleMode}: {toggleMode: (mode: string) => void}) => {
 
@@ -38,11 +38,20 @@ const NavComponent = ({toggleMode}: {toggleMode: (mode: string) => void}) => {
     }, [prevScrollPos]);
 
     return (
-        <header>
-            <Popover className={classNames(sulphur_point_400.className,"relative")}>
-                <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-10">
+        <header className="fixed w-full z-50">
+            <Popover className={cn(sulphur_point_400.className, "sticky top-0 bg-opacity-25 backdrop-blur backdrop-filter transition-transform firefox:bg-opacity-90", {
+                "translate-y-0": showNav,
+                "-translate-y-40": !showNav,
+            })}>
+                <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-4 sm:px-6 md:justify-start md:space-x-10 lg:px-10">
                     <div className="flex lg:w-0 lg:flex-1">
-                        <Link href="/" className="mr-auto flex items-end" >
+                        <Link href="/" className={cn(
+                            "sticky top-0 mr-auto flex items-end transition-transform",
+                            {
+                                "translate-y-0": showNav,
+                                "-translate-y-20": !showNav,
+                            }
+                        )} >
                             <span className="sr-only">Developer Portfolio | Morgan Mutugi</span>
                             <div className="flex items-center justify-center text-3xl font-black font-serif text-gray-700 dark:text-white">
                                 <span className="text-sky-500 dark:text-cyan-300 text-4xl font-light">#</span>
@@ -55,7 +64,7 @@ const NavComponent = ({toggleMode}: {toggleMode: (mode: string) => void}) => {
                     <div className="flex items-center justify-between w-1/3">
                         <nav
                             className={cn(
-                                "sticky top-0 mx-auto flex max-w-3xl items-center justify-between p-4 transition-transform dark:bg-black-900 lg:max-w-4xl	 lg:p-0 lg:py-4",
+                                "sticky top-0 ml-auto flex max-w-3xl items-center justify-between p-4 transition-transform dark:bg-black-900 lg:max-w-4xl lg:p-0 lg:py-4",
                                 {
                                     "translate-y-0": showNav,
                                     "-translate-y-20": !showNav,
@@ -80,10 +89,14 @@ const NavComponent = ({toggleMode}: {toggleMode: (mode: string) => void}) => {
                                     </li>
                                 ))}
                             </ul>
-
-
                         </nav>
-                        <div className="flex items-center justify-center">
+                        <div className={cn(
+                            "sticky top-0 border-l border-slate-200 ml-6 pl-6 dark:border-slate-800 transition-transform",
+                            {
+                                "translate-y-0": showNav,
+                                "-translate-y-20": !showNav,
+                            }
+                        )}>
                             <Menu as="div" className="relative flex items-center">
                                 {({ open }) => (
                                     <>
@@ -198,6 +211,35 @@ const NavComponent = ({toggleMode}: {toggleMode: (mode: string) => void}) => {
                         </div>
                     </div>
                 </div>
+
+                <nav
+                    className={cn(
+                        "absolute top-30 ml-auto flex max-w-3xl items-center justify-between p-4 transition-transform dark:bg-black-900 lg:max-w-4xl lg:p-0 lg:py-4",
+                        {
+                            "translate-y-0": showNav,
+                            "-translate-y-20": !showNav,
+                        }
+                    )}
+                >
+                    <ul className="sm:hidden rounded-full bg-white/90 px-2 py-2 text-sm font-medium text-black-800 shadow-lg shadow-black-800/5 ring-1 ring-black-900/5 backdrop-blur dark:bg-cyan-800/90 dark:text-cyan-200 dark:ring-white/10 flex">
+                        {navLinks.map((link) => (
+                            <li
+                                key={link.id}
+                                className={cn(
+                                    " capitalize  hover:text-teal-500  dark:hover:text-teal-400",
+                                    {
+                                        "text-teal-500 dark:text-teal-400": router.asPath === link.url,
+                                        "text-gray-700 dark:text-gray-100": router.asPath !== link.url,
+                                    }
+                                )}
+                            >
+                                <Link href={link.url} className="px-4">
+                                    {link.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
             </Popover>
         </header>
     )

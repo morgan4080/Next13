@@ -14,14 +14,14 @@ import TopLanguages from "@/components/TopLanguages";
 const stack = [
     {
         name: 'Top Languages',
-        description: 'JavaScript, Typescript, Kotlin.',
+        description: 'JavaScript, Typescript, Kotlin, PHP.',
         href: '#',
         icon: DevicePhoneMobileIcon,
         svg: TopLanguages
     },
     {
         name: 'Mobile Development',
-        description: 'React Native, Typescript, Kotlin.',
+        description: 'React Native, KMP, Flutter, Swift, Kotlin.',
         href: '#',
         icon: DevicePhoneMobileIcon,
         svg: IphoneMockup

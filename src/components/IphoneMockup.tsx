@@ -157,7 +157,7 @@ const IphoneMockup = () => {
         }
     }, [])
     return (
-        <svg viewBox="0 0 366 729" role="img" className="w-[22.875rem] max-w-full drop-shadow-2xl">
+        <svg viewBox="0 0 366 729" role="img" className="w-[16.875rem] max-w-full drop-shadow-2xl">
             <title>App screenshot</title>
             <defs>
                 <clipPath id="2ade4387-9c63-4fc4-b754-10e687a0d332">

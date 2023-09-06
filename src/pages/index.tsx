@@ -10,6 +10,7 @@ const seymour_one_400 = Seymour_One({subsets: ['latin'], weight: "400"})
 import {gsap} from "gsap"
 import Footer from "@/components/Footer"
 import About from "@/components/About"
+import Experience from "@/components/Experience";
 export default function Home() {
     const [loading, setLoading] = useState(true)
     const loadingRef = useRef(null)
@@ -77,12 +78,12 @@ export default function Home() {
 
         if (cursorDot.current) {
             let doc: HTMLElement = cursorDot.current;
-            gsap.to(doc, { left: event.pageX, top: event.pageY, opacity: 1, ease: "linear", duration: 0.25, stagger: 0.1 })
+            gsap.to(doc, { left: event.pageX, top: event.pageY, opacity: 1, ease: "bounce", duration: 0.3, stagger: 0.1 })
         }
 
         if (cursor.current) {
             let doc: HTMLElement = cursor.current;
-            gsap.to(doc, { left: event.pageX, top: event.pageY, opacity: 1, borderWidth: "2px", ease: "none", duration: 0.25, stagger: 0.1 });
+            gsap.to(doc, { left: event.pageX, top: event.pageY, opacity: 1, borderWidth: "2px", ease: "bounce", duration: 0.3, stagger: 0.2  });
         }
     }
 
@@ -118,15 +119,16 @@ export default function Home() {
                     <>
                         <BackgroundTexture />
                         <NavComponent toggleMode={toggleMode}/>
-                        <Hero />
-                        <About />
-                        <Skills />
-                        <Footer />
+                        <Hero cursorDotRef={cursorDot} cursorRef={cursor} />
+                        <About cursorDotRef={cursorDot} cursorRef={cursor} />
+                        <Experience cursorDotRef={cursorDot} cursorRef={cursor} />
+                        <Skills cursorDotRef={cursorDot} cursorRef={cursor} />
+                        <Footer cursorDotRef={cursorDot} cursorRef={cursor} />
                     </>
                 }
             </main>
-            <div ref={cursorDot} className="pointer-events-none w-1 h-1 fixed transition bg-slate-800 dark:bg-white lg:absolute cursor-dot"></div>
-            <div ref={cursor} className="pointer-events-none w-8 h-8 fixed transition border-slate-800 dark:border-white lg:absolute cursor"></div>
+            <div ref={cursorDot} className="z-50 pointer-events-none w-1 h-1 fixed transition bg-slate-800 dark:bg-white lg:absolute cursor-dot"></div>
+            <div ref={cursor} className="z-50 pointer-events-none w-8 h-8 fixed transition border-slate-800 dark:border-white lg:absolute cursor"></div>
         </div>
     )
 }

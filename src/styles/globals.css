@@ -60,12 +60,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 html,
 body {
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 /* width */
@@ -133,4 +133,40 @@ a {
   border-width: 0;
   opacity: 0;
   transform: translateX(-50%) translateY(-50%) scale(1) translateZ(0px);
+}
+#avatar-shapes {
+  top: -25%;
+  width: 40em;
+  z-index: -1;
+  height: 126%;
+  right: -5.4em;
+  position: absolute;
+}
+
+.ggnSEW {
+  margin: 0;
+  z-index: 1;
+  width: 23.334em;
+  height: 23.67em;
+  position: relative;
+  border: 0.115rem solid #fff;
+  scale: 0.6;
+}
+
+
+@media (min-width: 701px) {
+  .fWhlNu .inner-content.primary .visage {
+    margin-right: calc(6em + 4em);
+  }
+}
+
+.copied {
+  width: inherit;
+  display: block;
+  height: inherit;
+  margin-top: -2.435em;
+  background-color: #fff;
+  background-size: cover;
+  background-position-x: center;
+  margin-left: -2.2em;
 }

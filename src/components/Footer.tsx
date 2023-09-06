@@ -1,13 +1,35 @@
 import {Container} from "@/components/Container";
 import {Sulphur_Point, Stalinist_One} from "@next/font/google";
 import classNames from "@/Utils/ClassNames";
+import {Props} from "@/components/Hero";
+import {gsap} from "gsap";
 const sulphur_point_400 = Sulphur_Point({subsets: ['latin'], weight: "400"})
 const stalinist_900 = Stalinist_One({subsets: ['latin'], weight: "400"})
-const Footer = () => {
+const Footer = ({cursorDotRef, cursorRef}: Props) => {
     const backToTop = () => {
         if (document) {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
+        }
+    }
+    const hovered = () => {
+        if (cursorDotRef.current) {
+            let doc: HTMLElement = cursorDotRef.current;
+            gsap.to(doc, { display: "none" })
+        }
+        if (cursorRef.current) {
+            let doc: HTMLElement = cursorRef.current;
+            gsap.to(doc, { scale: 2, border: "none", backgroundColor: "#f3f2f9" })
+        }
+    }
+    const hoveredOut = () => {
+        if (cursorDotRef.current) {
+            let doc: HTMLElement = cursorDotRef.current;
+            gsap.to(doc, { display: "block" })
+        }
+        if (cursorRef.current) {
+            let doc: HTMLElement = cursorRef.current;
+            gsap.to(doc, { scale: 1, border: "2px solid", backgroundColor: "rgba(243,242,249,0)" })
         }
     }
     return (

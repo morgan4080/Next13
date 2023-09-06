@@ -10,7 +10,11 @@ import BackgroundTexture2 from "@/components/BackgroundTexture2"
 import BackgroundTexture3 from "@/components/BackgroundTexture3"
 const sulphur_point_400 = Sulphur_Point({subsets: ['latin'], weight: "400"})
 const seymour_one_400 = Seymour_One({subsets: ['latin'], weight: "400"})
-const Skills = () => {
+import Image from "next/image"
+import cn from "classnames";
+import {Props} from "@/components/Hero";
+import {gsap} from "gsap";
+const Skills = ({cursorDotRef, cursorRef}: Props) => {
     let [tabOrientation, setTabOrientation] = useState('horizontal')
     let [currentIndex, setCurrentIndex] = useState(0)
 
@@ -32,14 +36,34 @@ const Skills = () => {
     const setIndex: any = (index: number) => {
         setCurrentIndex(index)
     }
+    const hovered = () => {
+        if (cursorDotRef.current) {
+            let doc: HTMLElement = cursorDotRef.current;
+            gsap.to(doc, { display: "none" })
+        }
+        if (cursorRef.current) {
+            let doc: HTMLElement = cursorRef.current;
+            gsap.to(doc, { scale: 2, border: "none", backgroundColor: "#f3f2f9" })
+        }
+    }
+    const hoveredOut = () => {
+        if (cursorDotRef.current) {
+            let doc: HTMLElement = cursorDotRef.current;
+            gsap.to(doc, { display: "block" })
+        }
+        if (cursorRef.current) {
+            let doc: HTMLElement = cursorRef.current;
+            gsap.to(doc, { scale: 1, border: "2px solid", backgroundColor: "rgba(243,242,249,0)" })
+        }
+    }
     return(
-        <div className="min-h-screen relative pt-10 lg:pt-5 pb-32 sm:pb-0">
+        <div className="min-h-screen relative pt-10 lg:pt-5 sm:pb-0">
             <BackgroundTexture2/>
             <BackgroundTexture3/>
             <Container className="relative">
                 <div className="relative px-4 py-6 sm:px-6 lg:px-0">
                     <div className="max-w-2xl mx-0">
-                        <h2 id="skills" className={classNames(seymour_one_400.className, "font-cursive text-4xl text-sky-500 dark:text-cyan-300 font-bold tracking-tight sm:text-5xl lg:text-6xl")}>Skills</h2>
+                        <h2 id="skills" className={classNames(seymour_one_400.className, "font-cursive text-4xl text-sky-500 dark:text-cyan-300 font-bold tracking-tight sm:text-2xl lg:text-5xl")}>Skills & Abilities</h2>
                         <p className={classNames(sulphur_point_400.className, "mt-4 font-display text-xl tracking-tight dark:text-slate-300")}>
                             I specialize in HTML/CSS, JavaScript, Typescript, React, React-Native and Vue JS.
                             With a keen eye for detail, Im driven by the desire to build great products that help people engage with technology in meaningful ways.
@@ -94,10 +118,16 @@ const Skills = () => {
                             </div>
                         </div>
                         <Tab.Panels className="lg:col-span-3">
-                            { stack.map((item) => (
+                            { stack.map((item, i) => (
                                 <Tab.Panel
                                     key={item.name}
-                                    className="relative lg:min-h-screen lg:-mt-32 flex justify-end items-start [&:not(:focus-visible)]:focus:outline-none"
+                                    className={cn(
+                                        "relative lg:min-h-screen lg:-mt-24 flex justify-end items-start transition-transform delay-1000",
+                                        {
+                                            "translate-y-0": currentIndex == i,
+                                            "-translate-y-20": currentIndex !== i,
+                                        }
+                                    )}
                                     unmount={true}
                                 >
                                     <item.svg />
@@ -105,6 +135,16 @@ const Skills = () => {
                             ))}
                         </Tab.Panels>
                     </Tab.Group>
+                </div>
+                <div className="items-center gap-12 overflow-x-auto scrollbar-hide justify-center grid grid-cols-3 lg:grid-cols-8">
+                    <Image src="/vuejs-logo.svg" className="h-16 w-16 object-contain px-4 md:px-0" alt="vue.js" width={36} height={8} />
+                    <Image src="/reactjs-logo.svg" className="h-16 w-16 object-contain px-4 md:px-0" alt="vue.js" width={36} height={8} />
+                    <Image src="/tailwindcss-logo.svg" className="h-16 w-16 object-contain px-4 md:px-0" alt="vue.js" width={36} height={8} />
+                    <Image src="/nodejs-logo.png" className="h-16 w-16 object-contain px-4 md:px-0" alt="vue.js" width={36} height={8} />
+                    <Image src="/radixui-logo.png" className="h-16 w-16 object-contain px-4 md:px-0" alt="vue.js" width={36} height={8} />
+                    <Image src="/kotlin-logo.png" className="h-16 w-16 object-contain px-4 md:px-0" alt="vue.js" width={36} height={8} />
+                    <Image src="/swift-logo.png" className="h-16 w-16 object-contain px-4 md:px-0" alt="vue.js" width={36} height={8} />
+                    <Image src="/jetpack-logo.png" className="h-16 w-16 object-contain px-4 md:px-0" alt="vue.js" width={36} height={8} />
                 </div>
             </Container>
         </div>
