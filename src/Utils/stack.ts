@@ -9,13 +9,20 @@ import DataVizMockup from "@/components/DataVizMockup";
 import MobileExtra from "@/components/MobileExtra";
 import WebExtra from "@/components/WebExtra";
 import VizExtra from "@/components/VizExtra";
+import TopLanguages from "@/components/TopLanguages";
 
 const stack = [
+    {
+        name: 'Top Languages',
+        description: 'JavaScript, Typescript, Kotlin.',
+        href: '#',
+        icon: DevicePhoneMobileIcon,
+        svg: TopLanguages
+    },
     {
         name: 'Mobile Development',
         description: 'React Native, Typescript, Kotlin.',
         href: '#',
-        extra: MobileExtra,
         icon: DevicePhoneMobileIcon,
         svg: IphoneMockup
     },
@@ -23,7 +30,6 @@ const stack = [
         name: 'Web Development',
         description: 'Vue, React, Typescript, Tailwind.',
         href: '#',
-        extra: WebExtra,
         icon: GlobeAltIcon,
         svg: LaptopMockup
     },
@@ -31,7 +37,6 @@ const stack = [
         name: 'Data Visualization',
         description: 'D3.js, Chart.js, Victory-Native, React-Native-SVG.',
         href: '#',
-        extra: VizExtra,
         icon: DocumentChartBarIcon,
         svg: DataVizMockup
     }

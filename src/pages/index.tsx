@@ -1,15 +1,15 @@
+import React, {useEffect, useRef, useState} from "react"
 import Head from 'next/head'
 import Hero from "@/components/Hero"
 import NavComponent from "@/components/NavComponent"
 import Skills from "@/components/Skills"
 import BackgroundTexture from "@/components/BackgroundTexture";
-import {Seymour_One} from "@next/font/google";
-import classNames from "@/Utils/ClassNames";
-import {useEffect, useRef, useState} from "react";
+import {Seymour_One} from "@next/font/google"
+import classNames from "@/Utils/ClassNames"
 const seymour_one_400 = Seymour_One({subsets: ['latin'], weight: "400"})
 import {gsap} from "gsap"
-import BackgroundTexture2 from "@/components/BackgroundTexture2";
-import Footer from "@/components/Footer";
+import Footer from "@/components/Footer"
+import About from "@/components/About"
 export default function Home() {
     const [loading, setLoading] = useState(true)
     const loadingRef = useRef(null)
@@ -68,18 +68,45 @@ export default function Home() {
             }
         }
     }
-    //
+
+    const cursorDot = useRef(null);
+    const cursor = useRef(null);
+
+    const getCursorPosition = (event: any) => {
+        let body = document.querySelector("body")
+
+        if (cursorDot.current) {
+            let doc: HTMLElement = cursorDot.current;
+            gsap.to(doc, { left: event.pageX, top: event.pageY, opacity: 1, ease: "linear", duration: 0.25, stagger: 0.1 })
+        }
+
+        if (cursor.current) {
+            let doc: HTMLElement = cursor.current;
+            gsap.to(doc, { left: event.pageX, top: event.pageY, opacity: 1, borderWidth: "2px", ease: "none", duration: 0.25, stagger: 0.1 });
+        }
+    }
+
+    const mouseLeft = () => {
+        if (cursor.current) {
+            let doc: HTMLElement = cursor.current;
+            gsap.to(doc, { opacity: 0 });
+        }
+        if (cursorDot.current) {
+            let doc: HTMLElement = cursorDot.current;
+            gsap.to(doc, { opacity: 0 });
+        }
+    }
 
     return (
-        <>
+        <div onMouseMove={getCursorPosition} onMouseLeave={mouseLeft}>
             <Head>
-                <title>Mutugi Morgan</title>
+                <title>Home | Morgan Mutugi</title>
                 <meta name="description" content="Morgan Mutugi Portfolio" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main>
-                {loading ?
+            <main className="relative">
+                { loading ?
                     <div className="min-h-screen flex justify-center items-center">
                         <div className="overflow-hidden">
                             <h1 ref={loadingRef} className={classNames(seymour_one_400.className, "flex text-sky-500 dark:text-cyan-300 text-4xl")}>
@@ -88,15 +115,18 @@ export default function Home() {
                         </div>
                     </div>
                     :
-                    <div>
-                        <BackgroundTexture/>
+                    <>
+                        <BackgroundTexture />
                         <NavComponent toggleMode={toggleMode}/>
                         <Hero />
+                        <About />
                         <Skills />
                         <Footer />
-                    </div>
+                    </>
                 }
             </main>
-        </>
+            <div ref={cursorDot} className="pointer-events-none w-1 h-1 fixed transition bg-slate-800 dark:bg-white lg:absolute cursor-dot"></div>
+            <div ref={cursor} className="pointer-events-none w-8 h-8 fixed transition border-slate-800 dark:border-white lg:absolute cursor"></div>
+        </div>
     )
 }

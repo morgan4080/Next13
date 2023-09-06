@@ -72,35 +72,34 @@ const Hero = () => {
         }
     }, [])
     return (
-        <div className="relative overflow-hidden lg:min-h-screen pt-10 lg:pt-0 xl:pt-32">
+        <div className="relative lg:min-h-screen pt-10 lg:pt-0 xl:pt-32">
             <Container className="relative">
                 <BackgroundTexture2/>
                 <BackgroundTexture3/>
-                <div className="sm:rounded-2xl sm:flex sm:flex-row-reverse">
-                    <div className="z-10 sm:flex-1 pt-0 lg:pt-20 lg:pl-10">
+                <div className="sm:rounded-2xl sm:flex sm:flex-row-reverse relative">
+                    <div className="h-0 z-10">
                         <Astronaut/>
                     </div>
                     <div className="sm:flex-1">
                         <div className="relative px-4 py-6 sm:pt-20 sm:px-6 lg:px-0 lg:mb-32">
-                            <div className={classNames(seymour_one_400.className,"text-left lg:min-w-max text-3xl font-bold tracking-tight sm:text-5xl lg:text-8xl overflow-hidden")}>
+
+                            <div className={classNames(seymour_one_400.className,"text-left lg:min-w-max text-3xl font-bold tracking-tight sm:text-5xl lg:text-8xl mb-6 overflow-hidden")}>
                                 <div ref={animateContainerRef} className="flex text-slate-900 dark:text-slate-200">
-                                    <div>FULL</div>
-                                    <div>-</div>
-                                    <div>STACK</div>
+                                    <div>HI,</div>
                                 </div>
                             </div>
                             <div className={classNames(seymour_one_400.className,"text-left lg:min-w-max text-3xl font-bold tracking-tight sm:text-5xl lg:text-8xl overflow-hidden")}>
                                 <div ref={animateContainerRef1} className="flex text-sky-500 dark:text-cyan-300">
-                                    <div>DEVELOPER</div>
+                                    <div>I&apos;M MORGAN</div>
                                 </div>
                             </div>
                             <div ref={animateContainerRef2} className={classNames(sulphur_point_400.className,"mt-6 max-w-lg text-left text-xl sm:max-w-3xl overflow-hidden text-slate-700 dark:text-slate-300")}>
-                                <div>Based In Nairobi, Kenya</div>
+                                <div>Lead Frontend & Mobile Engineer at Presta Capital.</div>
                             </div>
-                            <div ref={animateContainerRef3} className={classNames(sulphur_point_400.className,"mt-6 max-w-md text-left font-display text-xl tracking-tight sm:pr-8 sm:max-w-2xl overflow-hidden text-slate-700 dark:text-slate-300")}>
+                            <div ref={animateContainerRef3} className={classNames(sulphur_point_400.className,"mt-6 max-w-md text-left font-display text-xl tracking-tight sm:pr-8 sm:max-w-4xl overflow-hidden text-slate-700 dark:text-slate-300")}>
                                 <div>
                                     I love creating intuitive experiences and well thought-out software solutions.
-                                    Most importantly, Im a people person. That means, Im able to inspire and get inspired.
+                                    Most importantly, I&lsquo;m a people person. That means, I&lsquo;m able to inspire and get inspired.
                                 </div>
                             </div>
                             <div className="overflow-hidden">

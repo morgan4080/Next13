@@ -34,12 +34,12 @@ const Skills = () => {
     }
     return(
         <div className="min-h-screen relative pt-10 lg:pt-5 pb-32 sm:pb-0">
+            <BackgroundTexture2/>
+            <BackgroundTexture3/>
             <Container className="relative">
-                <BackgroundTexture2/>
-                <BackgroundTexture3/>
-                <div className="relative px-4 py-6 sm:pb-28 sm:px-6 lg:px-0">
+                <div className="relative px-4 py-6 sm:px-6 lg:px-0">
                     <div className="max-w-2xl mx-0">
-                        <h2 id="skills" className={classNames(seymour_one_400.className, "font-cursive text-4xl text-sky-500 dark:text-cyan-300 font-bold tracking-tight sm:text-5xl lg:text-6xl")}>Stack</h2>
+                        <h2 id="skills" className={classNames(seymour_one_400.className, "font-cursive text-4xl text-sky-500 dark:text-cyan-300 font-bold tracking-tight sm:text-5xl lg:text-6xl")}>Skills</h2>
                         <p className={classNames(sulphur_point_400.className, "mt-4 font-display text-xl tracking-tight dark:text-slate-300")}>
                             I specialize in HTML/CSS, JavaScript, Typescript, React, React-Native and Vue JS.
                             With a keen eye for detail, Im driven by the desire to build great products that help people engage with technology in meaningful ways.
@@ -104,13 +104,6 @@ const Skills = () => {
                                 </Tab.Panel>
                             ))}
                         </Tab.Panels>
-                        <div className="lg:absolute lg:inset-y-1/2 lg:max-w-[32rem] lg:mx-0 mt-52">
-                            { stack.map((item, index) => (
-                                index === currentIndex && <div key={item.name} className={classNames(sulphur_point_400.className, "mt-4 font-display text-xl tracking-tight dark:text-slate-300")}>
-                                    <item.extra />
-                                </div>
-                            ))}
-                        </div>
                     </Tab.Group>
                 </div>
             </Container>
