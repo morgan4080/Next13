@@ -34,7 +34,7 @@ const Footer = ({cursorDotRef, cursorRef}: Props) => {
     }
     return (
         <Container>
-            <div className="sm:grid sm:grid-cols-2 sm:gap-8 xl:col-span-3 mt-64 lg:mt-20">
+            <div className="sm:grid sm:grid-cols-2 sm:gap-8 xl:col-span-3 lg:mt-20">
                 <div className="md:grid md:grid-cols-2 md:gap-8">
                     <div>
                         <ul role="list" className={classNames(sulphur_point_400.className, "mt-6 space-y-4")}>
