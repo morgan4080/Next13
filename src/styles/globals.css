@@ -153,10 +153,17 @@ a {
   scale: 0.6;
 }
 
+.customLanguages {
+  grid-template-columns: repeat(3, minmax(6rem, 1fr));
+}
+
 
 @media (min-width: 701px) {
   .fWhlNu .inner-content.primary .visage {
     margin-right: calc(6em + 4em);
+  }
+  .customLanguages {
+    grid-template-columns: repeat(6, minmax(6rem, 1fr));
   }
 }
 

@@ -2,7 +2,6 @@ import React, {useEffect, useRef, useState} from "react"
 import Head from 'next/head'
 import Hero from "@/components/Hero"
 import NavComponent from "@/components/NavComponent"
-import Skills from "@/components/Skills"
 import BackgroundTexture from "@/components/BackgroundTexture";
 import {Seymour_One} from "@next/font/google"
 import classNames from "@/Utils/ClassNames"
@@ -11,6 +10,7 @@ import {gsap} from "gsap"
 import Footer from "@/components/Footer"
 import About from "@/components/About"
 import Experience from "@/components/Experience";
+import Work from "@/components/Work";
 export default function Home() {
     const [loading, setLoading] = useState(true)
     const loadingRef = useRef(null)
@@ -78,12 +78,12 @@ export default function Home() {
 
         if (cursorDot.current) {
             let doc: HTMLElement = cursorDot.current;
-            gsap.to(doc, { left: event.pageX, top: event.pageY, opacity: 1, ease: "bounce", duration: 0.3, stagger: 0.1 })
+            gsap.to(doc, { left: event.pageX, top: event.pageY, opacity: 1, ease: "bounce.out", yoyoEase: "power2.out", duration: 0.3, stagger: 0.1 })
         }
 
         if (cursor.current) {
             let doc: HTMLElement = cursor.current;
-            gsap.to(doc, { left: event.pageX, top: event.pageY, opacity: 1, borderWidth: "2px", ease: "bounce", duration: 0.3, stagger: 0.2  });
+            gsap.to(doc, { left: event.pageX, top: event.pageY, opacity: 1, borderWidth: "2px", ease: "bounce.out", yoyoEase: "power2.out", duration: 0.3, stagger: 0.2  });
         }
     }
 
@@ -122,7 +122,7 @@ export default function Home() {
                         <Hero cursorDotRef={cursorDot} cursorRef={cursor} />
                         <About cursorDotRef={cursorDot} cursorRef={cursor} />
                         <Experience cursorDotRef={cursorDot} cursorRef={cursor} />
-                        <Skills cursorDotRef={cursorDot} cursorRef={cursor} />
+                        <Work cursorDotRef={cursorDot} cursorRef={cursor} />
                         <Footer cursorDotRef={cursorDot} cursorRef={cursor} />
                     </>
                 }

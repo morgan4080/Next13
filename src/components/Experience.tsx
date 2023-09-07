@@ -1,15 +1,17 @@
-import BlogPost from "@/components/Post";
+import Post from "@/components/Post";
 import React from "react";
 import classNames from "@/Utils/ClassNames";
 import {Seymour_One, Sulphur_Point} from "@next/font/google";
 import BackgroundTexture2 from "@/components/BackgroundTexture2";
 import {Container} from "@/components/Container";
 import {Props} from "@/components/Hero";
-const sulphur_point_400 = Sulphur_Point({subsets: ['latin'], weight: "400"})
+import {gsap} from "gsap";
 const seymour_one_400 = Seymour_One({subsets: ['latin'], weight: "400"})
+const sulphur_point_400 = Sulphur_Point({subsets: ['latin'], weight: "400"})
 export default function Experience({cursorDotRef, cursorRef}: Props) {
     const featuredPosts = [
         {
+            company: 'Presta Capital',
             title: 'Lead Engineer, Front-End and Mobile',
             excerpt: 'I have had the privilege of serving as a Lead Frontend and Mobile Engineer, responsible \n' +
                 'for leading the front end and mobile development teams. I use my skills spanning React \n' +
@@ -41,72 +43,87 @@ export default function Experience({cursorDotRef, cursorRef}: Props) {
                 "open communication, thorough code reviews, and knowledge exchange, I \n" +
                 "contribute to the holistic development process."
             ],
-            projects: [
-                {
-                    name: "Mobi-flex APP (2023)",
-                    description: "A multi-tenant mobile application for android and iOS created with Kotlin multiplatform. \n" +
-                        "The application is a client application for the Presta loan management system, that \n" +
-                        "offers bookkeeping, savings and dividend management, workflow and rules \n" +
-                        "management, customer management and onboarding, loan appraisal and management. \n" +
-                        "This application has allowed Presta to grow its customer base and provide more value to \n" +
-                        "existing lenders on the company's portfolio."
-                },
-                {
-                    name: "CODO APP (2023)",
-                    description: "A mobile app for android and iOS created with Kotlin multiplatform for MKM consulting \n" +
-                        "limited an accredited digital credit provider. This application is also integrated with \n" +
-                        "payment gateways like m-pesa and local bank paybill numbers to move loans and savings \n" +
-                        "from bank to m-pesa wallets, pay for commodities and make recurrent payments for \n" +
-                        "essential services."
-                },
-                {
-                    name: "PCEA RUIRU SACCO (2023)",
-                    description: "A mobile app for android and iOS created with Kotlin multiplatform for Ruiru sacco society \n" +
-                        "limited an accredited digital credit provider. This application is also integrated with \n" +
-                        "payment gateways like m-pesa and local bank paybill numbers to move loans and savings \n" +
-                        "from bank to m-pesa wallets, pay for commodities and make recurrent payments for \n" +
-                        "essential services."
-                },
-                {
-                    name: "Presta Sign APP (2022)",
-                    description: "A mobile application for android and iOS created in react native which allows users to \n" +
-                        "sign digital guarantor-ship and loan application forms. A client application for the Presta \n" +
-                        "guarantor-ship system, which allows microfinance organizations to process loan forms \n" +
-                        "quicker and comply with the Sacco society regulatory authority. Through this app Presta \n" +
-                        "was able to partner with other software providers in the lending space to integrate the \n" +
-                        "system and SDK."
-                },
-                {
-                    name: "One-Pay Credit KYC PWA (2022)",
-                    description: "A progressive web application made for one pay credit limited that allows sales agents \n" +
-                        "to onboard customers as leads on the company's CRM. The PWA uses a NodeJS API. "
-                }
-            ]
+        },
+        {
+            company: 'Kijani Collective',
+            title: 'Web Developer',
+            excerpt: 'We developed responsive and visually appealing websites for a wide \n' +
+                'range of clients. I worked closely with the design team to develop, integrate and \n' +
+                'customize content management systems like WordPress and payment gateways to \n' +
+                'ensure that the websites were efficient and functional.',
+            date: 'September 2019  – May 2021 ',
+            points: [
+                "E-commerce with woocommerce.",
+                "Payments Integrations with pesapal, iPay, kopokopo, Ting(cellulant)",
+                "S.E.O, keyword research, PPC, email marketing and analytics",
+                "Integrate Ad social media tracking pixels."
+            ],
+        },
+        {
+            company: 'Bean Interactive',
+            title: 'IT Intern',
+            excerpt: 'We did brand activations for various brands. This role required a\n' +
+                'strong understanding of each brands values and messaging, as well as a\n' +
+                'creative approach to capturing the attention of the target audience\n' +
+                'through various digital channels, such as social media, email marketing,\n' +
+                'and website content.',
+            date: 'March 2014',
+            points: [
+                "Customer.",
+                "Context",
+                "Content",
+                "Community",
+                "Conversion",
+            ],
         }
     ]
+
+    const hovered = () => {
+        if (cursorDotRef.current) {
+            let doc: HTMLElement = cursorDotRef.current;
+            gsap.to(doc, { display: "none" })
+        }
+        if (cursorRef.current) {
+            let doc: HTMLElement = cursorRef.current;
+            gsap.to(doc, { scale: 2, border: "none", backgroundColor: "#f3f2f9" })
+        }
+    }
+    const hoveredOut = () => {
+        if (cursorDotRef.current) {
+            let doc: HTMLElement = cursorDotRef.current;
+            gsap.to(doc, { display: "block" })
+        }
+        if (cursorRef.current) {
+            let doc: HTMLElement = cursorRef.current;
+            gsap.to(doc, { scale: 1, border: "2px solid", backgroundColor: "rgba(243,242,249,0)" })
+        }
+    }
     return (
-        <div id="experience" className="relative pt-10 lg:pt-5 sm:pb-20">
+        <div id="experience" className="relative pt-10 lg:pt-5">
             <BackgroundTexture2/>
             <Container className="relative">
-                <div className="flex items-center justify-between">
-                    <h2 id="skills" className={classNames(seymour_one_400.className, "font-cursive text-4xl text-sky-500 dark:text-cyan-300 font-bold tracking-tight sm:text-2xl lg:text-5xl")}>
-                        Experience
-                    </h2>
-                </div>
+                <div className="px-4 py-6 sm:pb-16 sm:px-6 lg:px-0">
+                    <div>
+                        <h2 onMouseEnter={hovered} onMouseLeave={hoveredOut} className={classNames(seymour_one_400.className, "font-cursive text-xl text-sky-500 dark:text-cyan-300 font-bold tracking-tight sm:text-2xl lg:text-5xl")}>Experience</h2>
+                        <p onMouseEnter={hovered} onMouseLeave={hoveredOut} className={classNames(sulphur_point_400.className, "font-display text-xl tracking-tight dark:text-slate-300 pt-2 lg:pt-4")}>
+                            Places i&apos;ve applied my craft.
+                        </p>
+                    </div>
 
-                <div className="my-4 lg:my-0">
-                    {featuredPosts.map(({ title, excerpt, date, points, projects }) => {
-                        return (
-                            <BlogPost
-                                key={date.toString()}
-                                title={title}
-                                excerpt={excerpt}
-                                date={date.toString()}
-                                points={points}
-                                projects={projects}
-                            />
-                        );
-                    })}
+                    <div className="my-4 lg:my-0">
+                        {featuredPosts.map(({ company, title, excerpt, date, points }) => {
+                            return (
+                                <Post
+                                    key={date.toString()}
+                                    company={company}
+                                    title={title}
+                                    excerpt={excerpt}
+                                    date={date.toString()}
+                                    points={points}
+                                />
+                            );
+                        })}
+                    </div>
                 </div>
             </Container>
         </div>

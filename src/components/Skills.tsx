@@ -57,7 +57,7 @@ const Skills = ({cursorDotRef, cursorRef}: Props) => {
         }
     }
     return(
-        <div className="min-h-screen relative pt-10 lg:pt-5 sm:pb-0">
+        <div className="relative pt-10 lg:pt-5 sm:pb-0">
             <BackgroundTexture2/>
             <BackgroundTexture3/>
             <Container className="relative">

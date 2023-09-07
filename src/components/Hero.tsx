@@ -132,7 +132,7 @@ const Hero = ({cursorDotRef, cursorRef}: Props) => {
 
 
     return (
-        <div className="relative lg:min-h-screen pt-48 lg:pt-32 xl:pt-32 overflow-hidden">
+        <div className="relative lg:min-h-screen pt-28 lg:pt-32 xl:pt-32 overflow-hidden">
             <Container className="relative">
                 <BackgroundTexture2/>
                 <BackgroundTexture3/>
@@ -177,11 +177,72 @@ const Hero = ({cursorDotRef, cursorRef}: Props) => {
                                     Most importantly, I&lsquo;m a people person. That means, I&lsquo;m able to inspire and get inspired.
                                 </div>
                             </div>
-                            <div className="overflow-hidden">
-                                <a href="mailto:morganmurungi@live.com" ref={animateContainerRef4} className={classNames(sulphur_point_400.className,"cursor-pointer mt-12 group inline-flex items-center justify-center py-4 px-6 text-lg focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-sky-500 dark:bg-zinc-300 text-white dark:text-slate-900 hover:text-slate-100 hover:bg-pink-400 active:bg-sky-800 active:text-sky-100 focus-visible:outline-sky-600")}>
-                                    <span onMouseEnter={hovered} onMouseLeave={hoveredOut}>GET IN TOUCH<span className="hidden lg:inline pl-4">→</span></span>
-                                </a>
-                            </div>
+                           <div className="pt-16">
+                               <div className="flex flex-wrap items-center justify-center sm:justify-start -mx-4 sm:mx-0 max-w-lg">
+                                   <ul className="flex-none inline-grid gap-x-2 gap-y-6 px-2 py-6 sm:px-0 xl:gap-x-6 bg-slate-50 rounded-lg dark:bg-slate-800 dark:highlight-white/5 customLanguages">
+                                       <li className="flex items-center justify-center">
+                                           <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
+                                               <Image src="/nodejs-logo.png" alt="lang" width={50} height={50} />
+                                           </div>
+                                       </li>
+                                       <li className="flex items-center justify-start">
+                                           <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
+                                               <Image src="/kotlin-logo.png" alt="lang" width={50} height={50} />
+                                           </div>
+                                       </li>
+                                       <li className="flex items-center justify-start">
+                                           <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
+                                               <Image src="/ts-logo.svg" alt="lang" width={50} height={50} />
+                                           </div>
+                                       </li>
+                                       <li className="flex items-center justify-start">
+                                           <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
+                                               <Image src="/mongo-logo.svg" alt="lang" width={50} height={50} className="scale-150" />
+                                           </div>
+                                       </li>
+                                       <li className="flex items-center justify-start">
+                                           <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
+                                               <Image src="/laravel-logo.png" alt="lang" width={50} height={50} />
+                                           </div>
+                                       </li>
+                                       <li className="flex items-center justify-start">
+                                           <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
+                                               <Image src="/vuejs-logo.svg" alt="lang" width={50} height={50} />
+                                           </div>
+                                       </li>
+                                       <li className="flex items-center justify-start">
+                                           <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
+                                               <Image src="/react-logo.svg" alt="lang" width={50} height={50} />
+                                           </div>
+                                       </li>
+                                       <li className="flex items-center justify-start">
+                                           <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
+                                               <Image src="/next.svg" alt="lang" width={50} height={50} />
+                                           </div>
+                                       </li>
+                                       <li className="flex items-center justify-start">
+                                           <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
+                                               <Image src="/jetpack-logo.png" alt="lang" width={50} height={50} />
+                                           </div>
+                                       </li>
+                                       <li className="flex items-center justify-start">
+                                           <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
+                                               <Image src="/swift-logo.png" alt="lang" width={50} height={50} />
+                                           </div>
+                                       </li>
+                                       <li className="flex items-center justify-start">
+                                           <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
+                                               <Image src="/aws-logo.svg" alt="lang" width={50} height={50} />
+                                           </div>
+                                       </li>
+                                       <li className="flex items-center justify-start">
+                                           <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
+                                               <Image src="/docker-logo.svg" alt="lang" className="scale-150" width={50} height={50} />
+                                           </div>
+                                       </li>
+                                   </ul>
+                               </div>
+                           </div>
                         </div>
                     </div>
                 </div>
