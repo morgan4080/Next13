@@ -177,8 +177,8 @@ const Hero = ({cursorDotRef, cursorRef}: Props) => {
                                     Most importantly, I&lsquo;m a people person. That means, I&lsquo;m able to inspire and get inspired.
                                 </div>
                             </div>
-                           <div className="pt-16">
-                               <div className="flex flex-wrap items-center justify-center sm:justify-start -mx-4 sm:mx-0 max-w-lg">
+                           {/*<div className="pt-16">
+                               <div className="flex flex-wrap items-center justify-center sm:justify-start -mx-4 sm:mx-0">
                                    <ul className="flex-none inline-grid gap-x-2 gap-y-6 px-2 py-6 sm:px-0 xl:gap-x-6 bg-slate-50 rounded-lg dark:bg-slate-800 dark:highlight-white/5 customLanguages">
                                        <li className="flex items-center justify-center">
                                            <div className="group text-sm font-semibold w-full flex flex-col items-center text-indigo-600 dark:text-indigo-400">
@@ -242,7 +242,7 @@ const Hero = ({cursorDotRef, cursorRef}: Props) => {
                                        </li>
                                    </ul>
                                </div>
-                           </div>
+                           </div>*/}
                         </div>
                     </div>
                 </div>

@@ -124,7 +124,7 @@ const Footer = ({cursorDotRef, cursorRef}: Props) => {
                             </li>
 
                             <li className="sm:text-right">
-                                <button onClick={() => backToTop()} type="button" className={classNames(sulphur_point_400.className, "sm:pt-12 sm:ml-auto")}>
+                                <button onClick={backToTop} type="button" className={classNames(sulphur_point_400.className, "sm:pt-12 sm:ml-auto")}>
                                     <div className="cursor-pointer text-xl relative leading-6 dark:text-gray-300 hover:text-sky-500">
                                         <div className="origin-center rotate-270 absolute -right-6">→</div>
                                         BACK TO TOP

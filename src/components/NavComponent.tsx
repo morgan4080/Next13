@@ -9,8 +9,8 @@ import cn from "classnames";
 const sulphur_point_400 = Sulphur_Point({subsets: ['latin'], weight: "400"})
 
 const navLinks = [
-    { id: 1, name: "Home", url: "/" },
-    { id: 2, name: "About", url: "/#about" },
+    { id: 1, name: "Home", url: "#" },
+    { id: 2, name: "About", url: "#about" },
     { id: 3, name: "Github", url: "https://github.com/morgan4080" },
 ];
 const NavComponent = ({toggleMode}: {toggleMode: (mode: string) => void}) => {
